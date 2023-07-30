@@ -1,0 +1,10 @@
+<template name="gcom" value="/*-$cf$-*&#10; | $sf$ |&#10; $l$$text$&#10; | $sf$ |&#10; *-$cf$-*/" description="Create section description" toReformat="false" toShortenFQNames="true">
+  <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+  <variable name="sf" expression="groovyScript(&quot;def width = 80; return ([' ']*width).join('');&quot;, text); " defaultValue="" alwaysStopAt="false" />
+  <variable name="cf" expression="groovyScript(&quot;return (['-']*_1.length()).join('');&quot;, sf); " defaultValue="" alwaysStopAt="false" />
+  <variable name="l" expression="groovyScript(&quot;def dif = 2 + (_2.length() - _1.length()) / 2; return ([' ']*dif.toInteger()).join('');&quot;, text, sf); " defaultValue="" alwaysStopAt="false" />
+  <context>
+    <option name="HTML" value="true" />
+    <option name="PHP" value="true" />
+  </context>
+</template>
